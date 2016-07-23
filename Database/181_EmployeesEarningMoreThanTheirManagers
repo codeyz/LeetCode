@@ -1,0 +1,9 @@
+# Write your MySQL query statement below
+select Employee.Name as Employee from Employee Employee
+inner join
+Employee Manager on Employee.managerid = Manager.id
+where Employee.Salary > Manager.Salary
+
+select Employee.Name as Employee from Employee Employee
+where Employee.ManagerId in (select Manager.Id from Employee Manager 
+                      where Employee.ManagerId = Manager.Id and Employee.Salary > Manager.Salary)
