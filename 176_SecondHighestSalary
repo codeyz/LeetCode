@@ -1,0 +1,3 @@
+# Write your MySQL query statement below
+select if(count(*) >= 1, Salary, null) as SecondHighestSalary from 
+(select distinct Salary from Employee order by Salary desc limit 1, 1) tmp
